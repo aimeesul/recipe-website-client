@@ -1,24 +1,35 @@
 <script>
-	let recipes = [];
+	export let recipes;
 
-	fetch("http://localhost:3000/recipes")
-		.then((response) => response.json())
-		.then((data) => {
-			for (const item of data) {
-				console.log(item.name);
-			}
+	// let recipes = [];
 
-			recipes=data;
-		});
+	// fetch("http://localhost:3000/recipes")
+	// 	.then((response) => response.json())
+	// 	.then((data) => {
+	// 		for (const item of data) {
+	// 			console.log(item.name);
+	// 		}
+
+	// 		recipes = data;
+	// 	});
 </script>
 
-<div><h1>recipes</h1></div>
+<div class="recipes">
+	<div><h1>recipes</h1></div>
 
-<div>
-	{#each recipes as recipe}
-		<div>{recipe.name}</div>
-	{/each}
+	<div>
+		{#if recipes == null}
+			<div>loading</div>
+		{:else}
+			{#each recipes as recipe}
+				<div>{recipe.name}</div>
+			{/each}
+		{/if}
+	</div>
 </div>
 
 <style>
+	.recipes {
+		text-align: left;
+	}
 </style>

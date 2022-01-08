@@ -1,12 +1,27 @@
 <script>
 	import RecipeList from "./RecipeList.svelte";
 	export let name;
+
+	let recipes = undefined;
+
+	fetch("http://localhost:3000/recipes")
+		.then((response) => response.json())
+		.then((data) => {
+			for (const item of data) {
+				console.log(item.name);
+			}
+
+			recipes = data;
+		});
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<RecipeList></RecipeList>
+	<p>
+		Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
+		how to build Svelte apps.
+	</p>
+	<RecipeList recipes={recipes}/>
 </main>
 
 <style>
