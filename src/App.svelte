@@ -2,14 +2,14 @@
 	import RecipeList from "./RecipeList.svelte";
 	export let name;
 
-	let recipes = undefined;
+	let recipePage = undefined;
 
 	fetch("http://localhost:3000/recipes", {
 		headers: { Authorization: "aimeeiscool" },
 	})
 		.then((response) => response.json())
 		.then((data) => {
-			recipes = data;
+			recipePage = data;
 		});
 </script>
 
@@ -19,7 +19,7 @@
 		Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
 		how to build Svelte apps.
 	</p>
-	<RecipeList {recipes} />
+	<RecipeList {recipePage} />
 </main>
 
 <style>
