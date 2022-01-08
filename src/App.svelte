@@ -9,10 +9,6 @@
 	})
 		.then((response) => response.json())
 		.then((data) => {
-			for (const item of data) {
-				console.log(item.name);
-			}
-
 			recipes = data;
 		});
 </script>

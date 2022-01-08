@@ -1,17 +1,6 @@
 <script>
+	import Recipe from "./Recipe.svelte"
 	export let recipes;
-
-	// let recipes = [];
-
-	// fetch("http://localhost:3000/recipes")
-	// 	.then((response) => response.json())
-	// 	.then((data) => {
-	// 		for (const item of data) {
-	// 			console.log(item.name);
-	// 		}
-
-	// 		recipes = data;
-	// 	});
 </script>
 
 <div class="recipes">
@@ -22,7 +11,7 @@
 			<div>loading</div>
 		{:else}
 			{#each recipes as recipe}
-				<div>{recipe.name}</div>
+				<Recipe {recipe}/>
 			{/each}
 		{/if}
 	</div>
