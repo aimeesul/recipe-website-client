@@ -4,7 +4,9 @@
 
 	let recipes = undefined;
 
-	fetch("http://localhost:3000/recipes")
+	fetch("http://localhost:3000/recipes", {
+		headers: { Authorization: "aimeeiscool" },
+	})
 		.then((response) => response.json())
 		.then((data) => {
 			for (const item of data) {
@@ -21,7 +23,7 @@
 		Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
 		how to build Svelte apps.
 	</p>
-	<RecipeList recipes={recipes}/>
+	<RecipeList {recipes} />
 </main>
 
 <style>
