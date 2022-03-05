@@ -1,5 +1,7 @@
 /node_modules/
 /public/build/
 build
+.routify
+dist
 
 .DS_Store

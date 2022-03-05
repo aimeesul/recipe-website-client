@@ -35,7 +35,7 @@ export default {
 		format: 'esm',
 		name: 'app',
 		// file: 'public/build/bundle.js',
-		dir: "dist/build"
+		dir: "public/build"
 	},
 	plugins: [
 		svelte({
