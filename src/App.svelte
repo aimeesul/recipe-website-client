@@ -2,5 +2,12 @@
 <script>
 	import { Router } from "@roxi/routify";
 	import { routes } from "../.routify/routes";
-  </script>
-  <Router {routes} />
+</script>
+
+<Router {routes} />
+
+<style>
+	:global(body) {
+		padding: 0;
+	}
+</style>
