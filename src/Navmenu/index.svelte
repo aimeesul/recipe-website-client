@@ -1,6 +1,5 @@
 <script>
-    import { url } from "@roxi/routify";
-    import NavmenuItem from "./_navmenuItem.svelte";
+    import NavmenuItem from "./NavmenuItem.svelte";
 </script>
 
 <div class="navmenu">

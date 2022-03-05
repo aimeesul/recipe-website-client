@@ -1,5 +1,5 @@
 <script>
-    import Navmenu from "./_navmenu.svelte";
+    import Navmenu from "../../Navmenu/index.svelte";
 </script>
 
 <Navmenu />
