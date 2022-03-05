@@ -9,7 +9,7 @@
 <style>
     main {
         text-align: center;
-        padding: 1em;
+        padding: 0 1em 1em 1em;
         max-width: 240px;
         margin: 0 auto;
     }
