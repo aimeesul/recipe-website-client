@@ -1,5 +1,7 @@
 <script>
 	import RecipeList from "./RecipeList.svelte";
+	import Button from "./Button.svelte";
+	import Banner from "./Banner.svelte";
 	export let name;
 
 	let recipePage = undefined;
@@ -13,13 +15,19 @@
 		});
 </script>
 
+<header>
+	<Banner></Banner>
+</header>
+
 <main>
+	<Button secondary type="button" on:click={()=>console.log("aimee!!!!")}>aimeeiscool</Button>
 	<h1>Hello {name}!</h1>
 	<p>
 		Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
 		how to build Svelte apps.
 	</p>
 	<RecipeList {recipePage} />
+
 </main>
 
 <style>
@@ -41,5 +49,8 @@
 		main {
 			max-width: none;
 		}
+	}
+	:global(body) {
+		padding: 0;
 	}
 </style>
