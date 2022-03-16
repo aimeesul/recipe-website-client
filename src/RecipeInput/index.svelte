@@ -60,7 +60,8 @@
 
 {#if measurementUnits != null}
     <div class="title">
-        <input type="text" bind:value={title} />
+        <label>Title of recipe: <input type="text" bind:value={title} /></label>
+        
     </div>
     <div class="ingredients">
         {#each ingredients as ingredient}
@@ -70,8 +71,9 @@
                 <span>{ingredient.measurement.unitName}</span>
             </div>
         {/each}
+        <p> Please input ingredients below:<br> </p>
         <form class="inputs">
-            <input type="text" bind:value={name} />
+            <input type="text" bind:value={name} /> 
             <input type="number" bind:value={quantity} />
             <div class="selectContainer">
                 <Select
@@ -104,6 +106,7 @@
                 <span>{step}</span>
             </div>
         {/each}
+        <p>Please input method below: <br></p>
         <form class="stepsInput">
             <input type="text" bind:value={step} />
             <Button on:click={addStep}>Add</Button>

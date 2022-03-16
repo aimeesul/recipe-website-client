@@ -4,7 +4,6 @@
 </script>
 
 <div class="recipes">
-	<div><h1>recipes</h1></div>
 
 	{#if recipePage == null}
 		<div>loading</div>
