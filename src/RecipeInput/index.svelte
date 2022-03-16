@@ -64,6 +64,7 @@
         
     </div>
     <div class="ingredients">
+        <div> Please input ingredients below:</div>
         {#each ingredients as ingredient}
             <div>
                 <span>{ingredient.name}</span>
@@ -71,7 +72,6 @@
                 <span>{ingredient.measurement.unitName}</span>
             </div>
         {/each}
-        <p> Please input ingredients below:<br> </p>
         <form class="inputs">
             <input type="text" bind:value={name} /> 
             <input type="number" bind:value={quantity} />
@@ -101,12 +101,12 @@
         </form>
     </div>
     <div class="steps">
+        <div>Please input method below:</div>
         {#each steps as step}
             <div>
                 <span>{step}</span>
             </div>
         {/each}
-        <p>Please input method below: <br></p>
         <form class="stepsInput">
             <input type="text" bind:value={step} />
             <Button on:click={addStep}>Add</Button>
