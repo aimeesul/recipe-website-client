@@ -6,12 +6,9 @@
 
 <style>
 	div{
-		border-style: solid;
-		width:25em;
-		margin: auto;
+		border: 1px solid #aaa;
+		box-shadow: 2px 2px 10px #00000080;
 		text-indent: 1em;
-		margin-bottom: 2em;
-		margin-top: 2em;
 	}
 	
 </style>
@@ -22,5 +19,5 @@
 	<RecipeIngredientList recipeIngredientList={recipe.recipeIngredients}/>
 	<p><b>Method:</b></p>
 	<RecipeStepList recipeStepList = {recipe.recipeSteps}/>
-	<p>Posted by: {recipe.userId}</p>
+	<p>Posted by: {recipe.user.userName}</p>
 </div>

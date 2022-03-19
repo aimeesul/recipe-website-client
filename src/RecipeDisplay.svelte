@@ -1,15 +1,20 @@
 <script>
     import RecipeList from "./RecipeList.svelte";
 
-    let recipePage = undefined;
-
-    fetch("http://localhost:3000/recipes", {
-        headers: { Authorization: "aimeeiscool" },
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            recipePage = data;
-        });
+    async function getRecipes(offset, limit) {
+        const response = await fetch(
+            `http://localhost:3000/recipes?limit=${limit}&offset=${offset}`,
+            {
+                headers: { Authorization: "aimeeiscool" },
+            }
+        );
+        const data = await response.json();
+        return data;
+        // .then((response) => response.json())
+        // .then((data) => {
+        //     recipePage = data;
+        // });
+    }
 </script>
 
-<RecipeList {recipePage} />
+<RecipeList getRecipesFunc={getRecipes} />
