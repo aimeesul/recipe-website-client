@@ -4,7 +4,7 @@
     let measurementUnits = undefined;
 
     fetch("http://localhost:3000/measurementUnits", {
-        headers: { Authorization: "aimeeiscool" },
+      //  headers: { Authorization: "aimeeiscool" },
     })
         .then((response) => response.json())
         .then((data) => {
@@ -48,7 +48,7 @@
     async function sendRecipe(recipe) {
         const response = await fetch("http://localhost:3000/recipes", {
             headers: {
-                Authorization: "aimeeiscool",
+                //Authorization: "aimeeiscool",
                 "Content-Type": "application/json",
             },
             method: "PUT",

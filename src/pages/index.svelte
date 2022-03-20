@@ -5,7 +5,7 @@
     let recipePage = undefined;
 
     fetch("http://localhost:3000/recipes", {
-        headers: { Authorization: "aimeeiscool" },
+       // headers: { Authorization: "aimeeiscool" },
     })
         .then((response) => response.json())
         .then((data) => {

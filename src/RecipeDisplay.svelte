@@ -5,7 +5,7 @@
         const response = await fetch(
             `http://localhost:3000/recipes?limit=${limit}&offset=${offset}`,
             {
-                headers: { Authorization: "aimeeiscool" },
+               // headers: { Authorization: "aimeeiscool" },
             }
         );
         const data = await response.json();

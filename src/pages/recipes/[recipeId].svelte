@@ -3,7 +3,7 @@
     export let recipeId;
     let recipe = undefined;
     fetch("http://localhost:3000/recipe/" + recipeId, {
-        headers: { Authorization: "aimeeiscool" },
+      //  headers: { Authorization: "aimeeiscool" },
     })
         .then((response) => response.json())
         .then((data) => {
