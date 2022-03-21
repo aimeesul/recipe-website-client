@@ -1,25 +1,22 @@
 <script>
-    import RecipeList from "../RecipeList.svelte";
-    export let name;
+    import RecipeDisplay from "../RecipeDisplay.svelte";
 
-    let recipePage = undefined;
-
-    fetch("http://localhost:3000/recipes", {
-       // headers: { Authorization: "aimeeiscool" },
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            recipePage = data;
-        });
+    async function getRecipes(offset, limit) {
+        const response = await fetch(
+            `http://localhost:3000/recipes?limit=${limit}&offset=${offset}`
+        );
+        const data = await response.json();
+        return data;
+        // .then((response) => response.json())
+        // .then((data) => {
+        //     recipePage = data;
+        // });
+    }
 </script>
 
+<h1>Recipe Share</h1>
 
-<h1>Hello000000 {name}!</h1>
-<p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-    how to build Svelte apps.
-</p>
-<RecipeList {recipePage} />
+<RecipeDisplay {getRecipes} />
 
 <style>
     h1 {
@@ -28,6 +25,4 @@
         font-size: 4em;
         font-weight: 100;
     }
-
-    
 </style>
