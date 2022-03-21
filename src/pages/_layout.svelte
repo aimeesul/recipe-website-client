@@ -1,8 +1,9 @@
 <script>
     import Banner from "../Banner.svelte";
+    import LoginLink from "../LoginLink.svelte";
 </script>
 
-<header><Banner /></header>
+<header><Banner><LoginLink></LoginLink></Banner></header>
 
 <main><slot /></main>
 

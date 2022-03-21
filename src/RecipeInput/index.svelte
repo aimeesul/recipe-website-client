@@ -1,10 +1,11 @@
 <script>
     import Button from "../Button.svelte";
     import Select from "svelte-select";
+    import { accessToken } from "../stores";
     let measurementUnits = undefined;
 
     fetch("http://localhost:3000/measurementUnits", {
-        headers: { Authorization: "aimeeiscool" },
+        //  headers: { Authorization: "aimeeiscool" },
     })
         .then((response) => response.json())
         .then((data) => {
@@ -32,7 +33,7 @@
         event.preventDefault();
     }
 
-    let title="";
+    let title = "";
 
     async function postRecipe() {
         const recipe = { title, steps, ingredients };
@@ -48,7 +49,7 @@
     async function sendRecipe(recipe) {
         const response = await fetch("http://localhost:3000/recipes", {
             headers: {
-                Authorization: "aimeeiscool",
+                Authorization: "JWT " + $accessToken,
                 "Content-Type": "application/json",
             },
             method: "PUT",
@@ -61,10 +62,9 @@
 {#if measurementUnits != null}
     <div class="title">
         <label>Title of recipe: <input type="text" bind:value={title} /></label>
-        
     </div>
     <div class="ingredients">
-        <div> Please input ingredients below:</div>
+        <div>Please input ingredients below:</div>
         {#each ingredients as ingredient}
             <div>
                 <span>{ingredient.name}</span>
@@ -73,7 +73,7 @@
             </div>
         {/each}
         <form class="inputs">
-            <input type="text" bind:value={name} /> 
+            <input type="text" bind:value={name} />
             <input type="number" bind:value={quantity} />
             <div class="selectContainer">
                 <Select
@@ -112,7 +112,7 @@
             <Button on:click={addStep}>Add</Button>
         </form>
     </div>
-    {#if ingredients.length > 0 && steps.length > 0 && title.length>0}
+    {#if ingredients.length > 0 && steps.length > 0 && title.length > 0}
         <div>
             <Button on:click={postRecipe}>Post Recipe</Button>
         </div>

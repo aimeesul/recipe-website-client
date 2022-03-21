@@ -8,7 +8,9 @@
 	let loading = true;
 
 	getRecipesFunc(offset, limit).then((data) => {
-		recipePage = data.items;
+		if (data) {
+			recipePage = data.items;
+		}
 		loading = false;
 	});
 
