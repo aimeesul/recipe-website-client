@@ -10,6 +10,9 @@
         <LinkButton secondary href={$url("/recipes/addNew")}>Add new recipe</LinkButton
         >
     </div>
+    <a href="http://localhost:3000/api/authentication/google/start"
+        >Switch account</a
+    >
 {:else}
     <a href="http://localhost:3000/api/authentication/google/start"
         >Log in with Google</a
