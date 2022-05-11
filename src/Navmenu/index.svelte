@@ -3,9 +3,7 @@
 </script>
 
 <div class="navmenu">
-    <NavmenuItem path={"./hottest"}>Hottest Recipes</NavmenuItem><NavmenuItem
-        path={"./saved"}>Saved Recipes</NavmenuItem
-    ><NavmenuItem path={"./mine"}>My Recipes</NavmenuItem>
+    <NavmenuItem path={"./hottest"}>All Recipes</NavmenuItem><NavmenuItem path={"./mine"}>My Recipes</NavmenuItem>
 </div>
 
 <style>
